@@ -90,7 +90,8 @@ def check_for_duplicates(paths, hash=hashlib.sha1):
             duplicate = hashes_full.get(full_hash)
             if duplicate:
                 print("Duplicate found: {0} and {1}".format(filename, duplicate))
-                os.remove(duplicate)
+                #print('Deleting {0}'.format(duplicate))
+                os.remove(filename)
             else:
                 hashes_full[full_hash] = filename
 
